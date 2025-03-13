@@ -20,11 +20,16 @@ import ParentComp from './components/ParentComp';
 import RefDemo from './components/RefDemo';
 import FocusInput from './components/FocusInput';
 import FRParentInput from './components/FRParentInput';
+import PortalsDemo from './components/PortalsDemo';
+import Modal from './components/Modal';
+import BackGroundDemo from './components/BackGroundDemo';
 
 function App() {
   return (
     <div className="App">
-      <FRParentInput />
+      <BackGroundDemo />
+      {/* <PortalsDemo /> */}
+      {/* <FRParentInput /> */}
       {/* <FocusInput /> */}
       {/* <RefDemo /> */}
       {/* <ParentComp /> */}
