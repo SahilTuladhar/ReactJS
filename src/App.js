@@ -23,11 +23,36 @@ import FRParentInput from './components/FRParentInput';
 import PortalsDemo from './components/PortalsDemo';
 import Modal from './components/Modal';
 import BackGroundDemo from './components/BackGroundDemo';
+import Hero from './components/Hero';
+import ErrorBoundary from './components/ErrorBoundary';
+import ClickCounter from './components/ClickCounter';
+import HoverCounter from './components/HoverCounter';
+import CommonCounter from './components/CommonCounter';
+import ClickCounterTwo from './components/ClickCountertwo';
+import HoverCounterTwo from './components/HoverCounterTwo';
 
 function App() {
   return (
     <div className="App">
-      <BackGroundDemo />
+      {/* <ErrorBoundary>
+      <Hero heroName ='SuperMan' />  
+      </ErrorBoundary>
+      <ErrorBoundary>
+      <Hero heroName ='Batman' />  
+      </ErrorBoundary>
+      <ErrorBoundary>
+      <Hero heroName ='Joker' /> 
+      </ErrorBoundary> */}
+    
+      {/* <ClickCounter name= 'Sahil' number = {17}/>
+      <HoverCounter name = 'Messi' number = {10}/> */}
+      <CommonCounter step = {5} render = {(count , incrementCount) => <ClickCounterTwo count = {count} incrementCount ={incrementCount} name = 'Sahil' number = {17} />}/>
+
+      <CommonCounter step = {10} render = {(count , incrementCount) => <HoverCounterTwo count = {count} incrementCount ={incrementCount} name = 'Messi' number = {10} />}/>
+      
+      
+      
+      {/* <BackGroundDemo /> */}
       {/* <PortalsDemo /> */}
       {/* <FRParentInput /> */}
       {/* <FocusInput /> */}
