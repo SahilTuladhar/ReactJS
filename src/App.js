@@ -30,10 +30,31 @@ import HoverCounter from './components/HoverCounter';
 import CommonCounter from './components/CommonCounter';
 import ClickCounterTwo from './components/ClickCountertwo';
 import HoverCounterTwo from './components/HoverCounterTwo';
+import ComponentA from './components/ComponentA';
+import { UserContextProvider } from './components/ContextProvider';
+import { ThemeContextProvider } from './components/ThemeContext';
+import { useState } from 'react';
 
 function App() {
+  
+  const [username , setUsername] = useState('Sahil')
+  const [isLoggedIn , setIsLoggedIn] = useState(false)
+  const [theme , setTheme] = useState('light')
+
+  const themeHandler = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light')
+  }
+  
   return (
     <div className="App">
+    <ThemeContextProvider value={{theme , themeHandler}}>
+    <UserContextProvider value={username}> 
+       <ComponentA />
+    </UserContextProvider>
+    </ThemeContextProvider>
+   
+     
+
       {/* <ErrorBoundary>
       <Hero heroName ='SuperMan' />  
       </ErrorBoundary>
@@ -46,11 +67,11 @@ function App() {
     
       {/* <ClickCounter name= 'Sahil' number = {17}/>
       <HoverCounter name = 'Messi' number = {10}/> */}
-      <CommonCounter step = {5} render = {(count , incrementCount) => <ClickCounterTwo count = {count} incrementCount ={incrementCount} name = 'Sahil' number = {17} />}/>
+      {/* <CommonCounter step = {5} render = {(count , incrementCount) => <ClickCounterTwo count = {count} incrementCount ={incrementCount} name = 'Sahil' number = {17} />}/>
 
-      <CommonCounter step = {10} render = {(count , incrementCount) => <HoverCounterTwo count = {count} incrementCount ={incrementCount} name = 'Messi' number = {10} />}/>
-      
-      
+      <CommonCounter step = {10} render = {(count , incrementCount) => <HoverCounterTwo count = {count} incrementCount ={incrementCount} name = 'Messi' number = {10} />}/> */}
+
+    
       
       {/* <BackGroundDemo /> */}
       {/* <PortalsDemo /> */}
